@@ -1,0 +1,56 @@
+#!/bin/sh
+
+##########################
+### Install Vim config ###
+##########################
+
+echo "Setting up Vim config"
+git clone https://github.com/AdamWhittingham/vim-config.git ~/.vim
+ln -s ~/.vim/vimrc ~/.vimrc
+vim +:PluginUpdate +:PluginClean +qall
+~/vim/install-plugin-update-hook.sh
+
+###########################
+### Install bash config ###
+###########################
+
+echo "Setting up bash config"
+git clone https://github.com/AdamWhittingham/bash-config .bash-config 
+cat >>~/.bashrc <<EOS
+  if [[ -f ~/.bash-config/bash_adam ]]; then
+    source ~/.bash-config/bash_adam
+  fi
+EOS
+
+###########################
+### Install tmux config ###
+###########################
+
+echo "Setting up Tmux config"
+git clone https://github.com/AdamWhittingham/tmux-config.git ~/.tmux-config
+ln -s ~/.tmux-config/tmux.conf ~/.tmux.conf
+
+##############################
+### Install brew cask apps ###
+##############################
+
+brew tap caskroom/cask
+brew install brew-cask
+
+while read app ; do brew cask install $app ; done <<-EOL
+  bettertouchtool
+  chromecast
+  controlpane
+  dropbox
+  google-chrome
+  google-hangouts
+  hubic
+  iterm2
+  kindle
+  launchrocket
+  radiant-player
+  skype
+  synergy
+  vagrant
+  virtualbox
+EOL
