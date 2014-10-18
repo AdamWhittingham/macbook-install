@@ -15,7 +15,7 @@ vim +:PluginUpdate +:PluginClean +qall
 ###########################
 
 echo "Setting up bash config"
-git clone https://github.com/AdamWhittingham/bash-config .bash-config 
+git clone https://github.com/AdamWhittingham/bash-config .bash-config
 cat >>~/.bashrc <<EOS
   if [[ -f ~/.bash-config/bash_adam ]]; then
     source ~/.bash-config/bash_adam
@@ -29,6 +29,15 @@ EOS
 echo "Setting up Tmux config"
 git clone https://github.com/AdamWhittingham/tmux-config.git ~/.tmux-config
 ln -s ~/.tmux-config/tmux.conf ~/.tmux.conf
+
+###############################
+### Install extra brew apps ###
+###############################
+
+while read app ; do brew install $app ; done <<-EOL
+  gource
+  mongodb
+EOL
 
 ##############################
 ### Install brew cask apps ###
