@@ -50,7 +50,7 @@ while read app ; do brew cask install $app ; done <<-EOL
   alfred
   bettertouchtool
   chromecast
-  controlpane
+  controlplane
   dropbox
   google-chrome
   google-hangouts
