@@ -21,6 +21,10 @@ curl -L http://install.ohmyz.sh | sh
 echo "Setting up adshell config"
 git clone https://github.com/AdamWhittingham/adshell ~/.adshell && ~/.adshell/install
 
+# Replace oh-my-zsh .zshrc with adshell one
+rm ~/.zshrc
+ln -s ~/.adshell/.zshrc ~/.zshrc
+
 ###########################
 ### Install tmux config ###
 ###########################
