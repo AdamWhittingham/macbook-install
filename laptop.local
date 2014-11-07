@@ -65,3 +65,5 @@ while read app ; do brew cask install $app ; done <<-EOL
   virtualbox
   macvim
 EOL
+
+brew cask alfred link
