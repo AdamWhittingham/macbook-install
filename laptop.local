@@ -5,22 +5,21 @@
 ##########################
 
 echo "Setting up Vim config"
-git clone https://github.com/AdamWhittingham/vim-config.git ~/.vim
-ln -s ~/.vim/vimrc ~/.vimrc
-vim +:PluginUpdate +:PluginClean +qall
-~/vim/install-plugin-update-hook.sh
+git clone https://github.com/AdamWhittingham/vim-config.git ~/.vim && ~/.vim/install
 
-###########################
-### Install bash config ###
-###########################
+#########################
+### Install oh-my.zsh ###
+#########################
 
-echo "Setting up bash config"
-git clone https://github.com/AdamWhittingham/bash-config .bash-config
-cat >>~/.bashrc <<EOS
-  if [[ -f ~/.bash-config/bash_adam ]]; then
-    source ~/.bash-config/bash_adam
-  fi
-EOS
+echo "Setting up oh-my.zsh"
+curl -L http://install.ohmyz.sh | sh
+
+#######################
+### Install adshell ###
+#######################
+
+echo "Setting up adshell config"
+git clone https://github.com/AdamWhittingham/adshell ~/.adshell && ~/.adshell/install
 
 ###########################
 ### Install tmux config ###
