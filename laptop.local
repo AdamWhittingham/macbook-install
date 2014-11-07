@@ -7,23 +7,22 @@
 echo "Setting up Vim config"
 git clone https://github.com/AdamWhittingham/vim-config.git ~/.vim && ~/.vim/install
 
-#########################
-### Install oh-my.zsh ###
-#########################
+#####################################
+### Install oh-my.zsh and adshell ###
+#####################################
 
-echo "Setting up oh-my.zsh"
-curl -L http://install.ohmyz.sh | sh
-
-#######################
-### Install adshell ###
-#######################
-
-echo "Setting up adshell config"
-git clone https://github.com/AdamWhittingham/adshell ~/.adshell && ~/.adshell/install
-
-# Replace oh-my-zsh .zshrc with adshell one
-rm ~/.zshrc
-ln -s ~/.adshell/.zshrc ~/.zshrc
+if [[ -f ~/.zshrc ]]
+then
+  echo "Skipping oh-my-zsh and adshell setup: ~/.zshrc already exists"
+else
+  echo "Setting up oh-my.zsh"
+  curl -L http://install.ohmyz.sh | sh
+  echo "Setting up adshell config"
+  git clone https://github.com/AdamWhittingham/adshell ~/.adshell && ~/.adshell/install
+  # Replace oh-my-zsh .zshrc with adshell one
+  rm ~/.zshrc
+  ln -s ~/.adshell/.zshrc ~/.zshrc
+fi
 
 ###########################
 ### Install tmux config ###
