@@ -64,3 +64,5 @@ while read app ; do brew cask install $app ; done <<-EOL
   vagrant
   virtualbox
 EOL
+
+brew cask alfred link
