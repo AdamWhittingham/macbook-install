@@ -47,6 +47,7 @@ brew tap caskroom/cask
 brew install brew-cask
 
 while read app ; do brew cask install $app ; done <<-EOL
+  alfred
   bettertouchtool
   chromecast
   controlpane
