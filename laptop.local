@@ -65,6 +65,7 @@ while read app ; do brew cask install $app ; done <<-EOL
   synergy
   vagrant
   virtualbox
+  macvim
 EOL
 
 brew cask alfred link
