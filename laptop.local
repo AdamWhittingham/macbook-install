@@ -37,6 +37,7 @@ ln -s ~/.tmux-config/tmux.conf ~/.tmux.conf
 ###############################
 
 while read app ; do brew install $app ; done <<-EOL
+  direnv
   gource
   mongodb
 EOL
@@ -55,17 +56,16 @@ while read app ; do brew cask install $app ; done <<-EOL
   controlplane
   dropbox
   google-chrome
-  google-hangouts
-  hubic
+  macvim
   iterm2
   kindle
   launchrocket
+  anvil
   radiant-player
   skype
   synergy
-  vagrant
   virtualbox
-  macvim
+  vagrant
 EOL
 
 brew cask alfred link
