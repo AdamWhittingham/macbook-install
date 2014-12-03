@@ -37,6 +37,7 @@ ln -s ~/.tmux-config/tmux.conf ~/.tmux.conf
 ###############################
 
 while read app ; do brew install $app ; done <<-EOL
+  awscli
   direnv
   gource
   mongodb
