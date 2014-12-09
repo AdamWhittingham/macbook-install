@@ -28,9 +28,14 @@ fi
 ### Install tmux config ###
 ###########################
 
-echo "Setting up Tmux config"
-git clone https://github.com/AdamWhittingham/tmux-config.git ~/.tmux-config
-ln -s ~/.tmux-config/tmux.conf ~/.tmux.conf
+if [[ -d ~/.tmux-config ]]
+then
+  echo "Skipping tmux setup: ~/.tmux-config already exists"
+else
+  echo "Setting up tmux config"
+  git clone https://github.com/AdamWhittingham/tmux-config.git ~/.tmux-config
+  ln -s ~/.tmux-config/tmux.conf ~/.tmux.conf
+fi
 
 ###############################
 ### Install extra brew apps ###
