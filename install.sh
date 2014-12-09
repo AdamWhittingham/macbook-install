@@ -3,6 +3,6 @@
 mkdir -p $HOME/projects
 
 pushd $(dirname $0) >/dev/null
-ln -s laptop.local ~/.laptop.local
+ln -s ./laptop.local ~/.laptop.local
 bash <(curl -s https://raw.githubusercontent.com/thoughtbot/laptop/master/mac) 2>&1 | tee ~/laptop.log
 popd > /dev/null
