@@ -23,6 +23,7 @@ curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Elixir.
 curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Go.gitignore' >> ~/.gitignore_global
 curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Android.gitignore' >> ~/.gitignore_global
 
+git config --global core.excludesfile ~/.gitignore_global
 ##########################
 ### Install Vim config ###
 ##########################
