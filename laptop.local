@@ -1,4 +1,27 @@
 #!/bin/sh
+####################################
+### Initialize .gitignore_global ###
+####################################
+
+echo "Overwriting the .gitignore_global in the home directory"
+
+echo '#files to be ignored' > ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Global/vim.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Global/OSX.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Global/SublimeText.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Rails.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Ruby.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Global/Vagrant.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Global/Tags.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Global/SVN.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Global/CodeKit.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Global/Xcode.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Sass.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Yeoman.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Elixir.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Go.gitignore' >> ~/.gitignore_global
+curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Android.gitignore' >> ~/.gitignore_global
 
 ##########################
 ### Install Vim config ###
