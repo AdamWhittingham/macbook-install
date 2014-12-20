@@ -1,4 +1,11 @@
 #!/bin/sh
+
+##############################
+### Create projects folder ###
+##############################
+
+mkdir -p $HOME/projects
+
 ####################################
 ### Initialize .gitignore_global ###
 ####################################
@@ -24,12 +31,19 @@ curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Go.giti
 curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Android.gitignore' >> ~/.gitignore_global
 
 git config --global core.excludesfile ~/.gitignore_global
+
 ##########################
 ### Install Vim config ###
 ##########################
 
-echo "Setting up Vim config"
-git clone https://github.com/AdamWhittingham/vim-config.git ~/.vim && ~/.vim/install
+if [[ -f ~/.vim ]]
+then
+  echo "Updating Vim config"
+  git pull && ~/.vim/install
+else
+  echo "Setting up Vim config"
+  git clone https://github.com/AdamWhittingham/vim-config.git ~/.vim && ~/.vim/install
+fi
 
 #####################################
 ### Install oh-my.zsh and adshell ###
