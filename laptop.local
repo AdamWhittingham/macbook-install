@@ -75,6 +75,18 @@ else
   ln -s ~/.tmux-config/tmux.conf ~/.tmux.conf
 fi
 
+#################################
+### Install extra rbenv tools ###
+#################################
+
+# Install rbenv alias
+mkdir -p ~/.rbenv/plugins
+git clone https://github.com/tpope/rbenv-aliases.git ~/.rbenv/plugins/rbenv-aliases
+rbenv alias --auto
+
+# Install rbenv Gemfile support
+git clone https://github.com/aripollak/rbenv-bundler-ruby-version.git ~/.rbenv/plugins/rbenv-bundler-ruby-version
+
 ###############################
 ### Install extra brew apps ###
 ###############################
