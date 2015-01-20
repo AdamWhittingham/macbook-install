@@ -32,6 +32,7 @@ curl --silent 'https://raw.githubusercontent.com/github/gitignore/master/Android
 
 git config --global core.excludesfile ~/.gitignore_global
 
+
 ##########################
 ### Install Vim config ###
 ##########################
@@ -44,6 +45,7 @@ else
   echo "Setting up Vim config"
   git clone https://github.com/AdamWhittingham/vim-config.git ~/.vim && ~/.vim/install
 fi
+
 
 #####################################
 ### Install oh-my.zsh and adshell ###
@@ -62,6 +64,7 @@ else
   ln -s ~/.adshell/.zshrc ~/.zshrc
 fi
 
+
 ###########################
 ### Install tmux config ###
 ###########################
@@ -75,17 +78,23 @@ else
   ln -s ~/.tmux-config/tmux.conf ~/.tmux.conf
 fi
 
+
 #################################
 ### Install extra rbenv tools ###
 #################################
 
-# Install rbenv alias
+# Install rbenv-bundler for better shims
+git clone https://github.com/carsomyr/rbenv-bundler.git ~/.rbenv/plugins/bundler
+rbenv bundler on
+
+# Install rbenv aliases for shorter Ruby versions
 mkdir -p ~/.rbenv/plugins
 git clone https://github.com/tpope/rbenv-aliases.git ~/.rbenv/plugins/rbenv-aliases
 rbenv alias --auto
 
 # Install rbenv Gemfile support
 git clone https://github.com/aripollak/rbenv-bundler-ruby-version.git ~/.rbenv/plugins/rbenv-bundler-ruby-version
+
 
 ###############################
 ### Install extra brew apps ###
